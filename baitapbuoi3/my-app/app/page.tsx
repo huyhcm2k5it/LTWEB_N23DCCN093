@@ -17,18 +17,15 @@ export default async function Home() {
   const data = await res.json();
   const products = data.products || [];
 
-  const randomProduct =
-    products.length > 0
-      ? products[Math.floor(Math.random() * products.length)]
-      : null;
-
-  if (!randomProduct) {
+  if (products.length === 0) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#dcdcdc] text-black">
         No products found.
       </div>
     );
   }
+
+  const randomProduct = products[Math.floor(Math.random() * products.length)];
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[#dcdcdc] p-4 font-sans">
