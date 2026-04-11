@@ -1,72 +1,73 @@
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const res = await fetch("https://dummyjson.com/products/category/mens-shirts", {
-    cache: "no-store", // Ensure it never caches to get new product on F5
-  });
-  
+  const res = await fetch(
+    "https://dummyjson.com/products/category/mens-shirts",
+    { cache: "no-store" }
+  );
+
   if (!res.ok) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-[#dcdcdc] text-black">
         Error fetching products.
       </div>
     );
   }
-  
+
   const data = await res.json();
   const products = data.products || [];
-  
-  const randomProduct = products.length > 0 
-    ? products[Math.floor(Math.random() * products.length)]
-    : null;
+
+  const randomProduct =
+    products.length > 0
+      ? products[Math.floor(Math.random() * products.length)]
+      : null;
 
   if (!randomProduct) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white text-black">
+      <div className="flex min-h-screen items-center justify-center bg-[#dcdcdc] text-black">
         No products found.
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#f2f4f8] p-4 font-sans text-black">
-      <h1 className="mb-10 text-[22px] font-bold text-gray-800 tracking-wide">
-        Fashion Trending 2026
-      </h1>
-      
-      {/* Product Card */}
-      <div className="w-full max-w-[300px] rounded-[1.25rem] bg-white p-[18px] shadow-[0_15px_40px_rgba(0,0,0,0.06)]">
-        
-        {/* Image Container */}
-        <div className="relative mb-5 flex h-[260px] w-full items-center justify-center overflow-hidden rounded-[14px] bg-[#f0f2f6] p-4 transition duration-300">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={randomProduct.thumbnail}
-            alt={randomProduct.title}
-            className="h-full w-full object-contain mix-blend-multiply hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#dcdcdc] p-4 font-sans">
+      <div className="w-[280px]">
+        <h1 className="mb-6 text-center text-[20px] font-bold text-black tracking-wide">
+          Fashion Trending 2026
+        </h1>
 
-        {/* Product Details */}
-        <div className="flex flex-col px-1">
-          <div className="flex items-center justify-between">
-            <span className="text-[12px] font-semibold text-[#6db2e4]">
-              New Arrival
-            </span>
-            <span className="text-[15px] font-bold text-[#e14040]">
-              ${randomProduct.price}
-            </span>
+        <div className="w-full overflow-hidden rounded-2xl bg-white shadow-lg">
+          {/* Image */}
+          <div className="flex h-[250px] w-full items-center justify-center bg-[#ececec] p-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={randomProduct.thumbnail}
+              alt={randomProduct.title}
+              className="max-h-full max-w-full object-contain"
+            />
           </div>
-          
-          <h2 className="mt-[6px] text-[15px] font-bold text-gray-900 line-clamp-1">
-            {randomProduct.title}
-          </h2>
-          
-          <button className="mt-5 w-full rounded-lg bg-black py-3 text-[13px] font-semibold text-white transition-colors hover:bg-gray-800 active:bg-gray-900">
-            Thêm vào giỏ hàng
-          </button>
-        </div>
 
+          {/* Info */}
+          <div className="px-5 pb-5 pt-4">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-semibold text-[#5ba8d4]">
+                New Arrival
+              </span>
+              <span className="text-[15px] font-bold text-red-600">
+                ${randomProduct.price}
+              </span>
+            </div>
+
+            <h2 className="mt-1 text-[14px] font-bold text-black leading-snug line-clamp-1">
+              {randomProduct.title}
+            </h2>
+
+            <button className="mt-4 w-full rounded-md bg-[#2d2d2d] py-2.5 text-[12px] font-medium text-white tracking-wide transition-colors hover:bg-black">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
