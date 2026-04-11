@@ -35,7 +35,6 @@ export default async function Home() {
         </h1>
 
         <div className="w-full overflow-hidden rounded-2xl bg-white shadow-lg">
-          {/* Image */}
           <div className="flex h-[250px] w-full items-center justify-center bg-[#ececec] p-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -45,7 +44,6 @@ export default async function Home() {
             />
           </div>
 
-          {/* Info */}
           <div className="px-5 pb-5 pt-4">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold text-[#5ba8d4]">
