@@ -1,0 +1,190 @@
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #1a202c;
+  --panel-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --input-bg: #f8fafc;
+  --btn-primary: #8b5cf6;
+  --btn-danger: #fee2e2;
+  --btn-danger-text: #ef4444;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --header-bg: transparent;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --panel-bg: #1e293b;
+  --border-color: #334155;
+  --input-bg: #334155;
+  --btn-primary: #a855f7;
+  --btn-danger: #3c1e28;
+  --btn-danger-text: #f87171;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --header-bg: rgba(30, 41, 59, 0.8);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.note-count {
+  background-color: var(--panel-bg);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.theme-toggle {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+.theme-toggle:hover {
+  background: var(--border-color);
+}
+
+/* Note Form */
+.note-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.note-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-shadow: var(--shadow);
+}
+
+.note-input:focus {
+  outline: none;
+  border-color: var(--btn-primary);
+}
+
+.btn-add {
+  background-color: var(--btn-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  box-shadow: var(--shadow);
+}
+
+.btn-add:hover {
+  opacity: 0.9;
+}
+
+/* Note List */
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.note-item {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.note-item:hover {
+  transform: translateY(-2px);
+}
+
+.note-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.note-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.note-time {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.btn-delete {
+  background-color: var(--btn-danger);
+  color: var(--btn-danger-text);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: var(--btn-danger-text);
+  color: white;
+}
