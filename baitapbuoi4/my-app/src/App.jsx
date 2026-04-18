@@ -6,18 +6,18 @@ import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const [notes, setNotes] = useState(() => {
-    const savedNotes = localStorage.getItem('notes');
+    const savedNotes = localStorage.getItem('notes_v2');
     return savedNotes ? JSON.parse(savedNotes) : [
-      { id: 1, text: 'Học useState để quản lý state trong component', time: '17/04/2026, 20:00' },
-      { id: 2, text: 'Tìm hiểu useEffect xử lý side effects', time: '17/04/2026, 20:05' },
-      { id: 3, text: 'Thực hành Context API chia sẻ dữ liệu', time: '17/04/2026, 20:10' },
-      { id: 4, text: 'Thêm chức năng Dark / Light mode', time: '17/04/2026, 20:15' },
-      { id: 5, text: 'Lưu dữ liệu vào localStorage bằng useEffect', time: '17/04/2026, 20:20' }
+      { id: 1, text: 'Học useState để quản lý state trong component', time: '17/04/2026, 20:00', icon: '📚' },
+      { id: 2, text: 'Tìm hiểu useEffect xử lý side effects', time: '17/04/2026, 20:05', icon: '⚡' },
+      { id: 3, text: 'Thực hành Context API chia sẻ dữ liệu', time: '17/04/2026, 20:10', icon: '🔗' },
+      { id: 4, text: 'Thêm chức năng Dark / Light mode', time: '17/04/2026, 20:15', icon: '🌙' },
+      { id: 5, text: 'Lưu dữ liệu vào localStorage bằng useEffect', time: '17/04/2026, 20:20', icon: '💾' }
     ];
   });
 
   useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes));
+    localStorage.setItem('notes_v2', JSON.stringify(notes));
   }, [notes]);
 
   const addNote = (text) => {
@@ -27,7 +27,8 @@ function App() {
     const newNote = {
       id: Date.now(),
       text,
-      time: timeString
+      time: timeString,
+      icon: '📌'
     };
     
     setNotes([newNote, ...notes]);
@@ -39,10 +40,12 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="container">
+      <div className="app-wrapper">
         <Header noteCount={notes.length} />
-        <NoteForm onAddNote={addNote} />
-        <NoteList notes={notes} onDelete={deleteNote} />
+        <div className="container">
+          <NoteForm onAddNote={addNote} />
+          <NoteList notes={notes} onDelete={deleteNote} />
+        </div>
       </div>
     </ThemeProvider>
   );

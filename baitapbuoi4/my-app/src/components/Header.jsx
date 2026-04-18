@@ -6,7 +6,7 @@ export default function Header({ noteCount }) {
   return (
     <div className="header">
       <h1>
-        <span style={{ fontSize: '1.2rem' }}>📝</span> Ghi Chú Cá Nhân
+        <span style={{ fontSize: '1.2rem' }}>📄</span> Ghi Chú Cá Nhân
       </h1>
       <div className="header-right">
         <span className="note-count">{noteCount} ghi chú</span>

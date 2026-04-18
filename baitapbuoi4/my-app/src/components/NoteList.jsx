@@ -8,7 +8,7 @@ export default function NoteList({ notes, onDelete }) {
       {notes.map((note) => (
         <div key={note.id} className="note-item">
           <div className="note-content">
-            <span className="note-icon">📌</span>
+            <span className="note-icon">{note.icon || '📌'}</span>
             <div style={{display: 'flex', flexDirection: 'column'}}>
               <span className="note-text">{note.text}</span>
               <span className="note-time">{note.time}</span>
