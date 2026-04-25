@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="header-container">
         <h1>Buổi 06 — Bài tập thực hành</h1>
@@ -55,12 +57,12 @@
 
     <script>
         // FORM 1 (GET)
-        document.getElementById('form1').addEventListener('submit', function(event) {
+        document.getElementById('form1').addEventListener('submit', function (event) {
             event.preventDefault();
-            
+
             const name = document.getElementById('name1').value;
             const age = document.getElementById('age1').value;
-            
+
             fetch(`/api/info?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}`)
                 .then(res => res.json())
                 .then(data => {
@@ -78,13 +80,13 @@
         });
 
         // FORM 2 (POST)
-        document.getElementById('form2').addEventListener('submit', function(event) {
+        document.getElementById('form2').addEventListener('submit', function (event) {
             event.preventDefault();
-            
+
             const name = document.getElementById('name2').value;
             const age = document.getElementById('age2').value;
             const email = document.getElementById('email2').value;
-            
+
             fetch('/api/register', {
                 method: 'POST',
                 headers: {
@@ -92,20 +94,21 @@
                 },
                 body: JSON.stringify({ name, age, email })
             })
-            .then(res => res.json())
-            .then(data => {
-                const resultBox = document.getElementById('result2');
-                resultBox.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-                if (data.error) {
-                    resultBox.style.color = '#dc3545';
-                } else {
-                    resultBox.style.color = '#333';
-                }
-            })
-            .catch(err => {
-                document.getElementById('result2').innerText = "Lỗi kết nối!";
-            });
+                .then(res => res.json())
+                .then(data => {
+                    const resultBox = document.getElementById('result2');
+                    resultBox.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    if (data.error) {
+                        resultBox.style.color = '#dc3545';
+                    } else {
+                        resultBox.style.color = '#333';
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('result2').innerText = "Lỗi kết nối!";
+                });
         });
     </script>
 </body>
+
 </html>
