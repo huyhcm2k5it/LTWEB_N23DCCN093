@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== PHẦN 1: TIÊU ĐỀ ===== */
+.section-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+}
+
+.section-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.section-header .underline {
+    width: 120px;
+    height: 4px;
+    background: white;
+    margin: 20px auto;
+}
+
+/* ===== PHẦN 2: CẤU TRÚC PROJECT ===== */
+.project-structure {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.project-structure .code-block {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-x: auto;
+}
+
+.project-structure .code-block .comment {
+    color: #666;
+    margin-left: 20px;
+}
+
+/* ===== PHẦN 3: THỰC HIỆN ===== */
+.thuc-hien {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.thuc-hien .section-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    grid-column: span 2;
+}
+
+.thuc-hien-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.thuc-hien-item h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.thuc-hien-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.thuc-hien-item li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #333;
+    line-height: 1.6;
+}
+
+.thuc-hien-item li:before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.credentials-box {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+.credentials-box p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.credentials-box code {
+    background: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #d63384;
+    font-weight: 600;
+}
+
+/* ===== PHẦN 4: DEMO KỊCH TÍCH ===== */
+.demo-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.demo-section .section-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.demo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.demo-left {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.demo-left h4 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.demo-steps {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.step {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content strong {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.demo-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.demo-box {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.demo-box h5 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.demo-box ul {
+    list-style: none;
+}
+
+.demo-box li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.demo-box li:before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ===== PHẦN 5: LOGIN & ACCESS CONTROL ===== */
+.access-control {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-panel {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-panel .lock-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.login-panel h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-group button:hover {
+    background: #764ba2;
+}
+
+.demo-credentials {
+    margin-top: 30px;
+    text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.demo-credentials p {
+    margin: 8px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+.demo-credentials strong {
+    color: #667eea;
+}
+
+.access-denied {
+    background: #ffe8e8;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.access-denied .x-icon {
+    font-size: 48px;
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+.access-denied h3 {
+    color: #d32f2f;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.access-denied p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.role-badge {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #d32f2f;
+}
+
+.arrow {
+    font-size: 60px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+/* ===== PHẦN 6: ADVISOR DASHBOARD ===== */
+.advisor-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.advisor-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.login-left {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.login-left h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+.login-left .form-group {
+    margin-bottom: 15px;
+}
+
+.login-left input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.login-left button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.demo-creds {
+    margin-top: 25px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.demo-creds p {
+    margin: 5px 0;
+}
+
+.demo-creds code {
+    background: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #d63384;
+    font-weight: 600;
+}
+
+.arrow-center {
+    font-size: 80px;
+    color: #333;
+    text-align: center;
+}
+
+.dashboard-panel {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.dashboard-header {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.dashboard-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+.dashboard-info .icon {
+    font-size: 18px;
+}
+
+.dashboard-info .label {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.dashboard-info .value {
+    color: #666;
+}
+
+.token-time {
+    color: #28a745;
+    font-weight: 700;
+}
+
+.dashboard-section-title {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.demo-guide {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.demo-guide ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.demo-guide li {
+    margin: 5px 0;
+}
+
+.demo-guide li .checkmark {
+    color: #28a745;
+    margin-right: 5px;
+}
+
+.buttons-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #764ba2;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.result-box {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: none;
+}
+
+.result-box.active {
+    display: block;
+}
+
+.result-box h5 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.result-box pre {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .thuc-hien {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-content {
+        grid-template-columns: 1fr;
+    }
+
+    .advisor-content {
+        grid-template-columns: 1fr;
+    }
+}
